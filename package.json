@@ -1,0 +1,24 @@
+{
+  "name": "dispotify",
+  "version": "1.0.2",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Spotify",
+    "Discord",
+    "spotify-discord",
+    "spotifycord",
+    "spocord",
+    "spoticord",
+    "dispotify"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "discord.js": "^14.16.1"
+  }
+}
