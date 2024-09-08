@@ -6,7 +6,7 @@
 ### ✨ Features:
 
 - Get user's current Spotify listening activity.
-- Retrieve user info from Discord (display name, servers, avatar).
+- Get user info from Discord (display name, servers, avatar).
 
 ### 🖋️ Usage:
 - Install module using `npm i dispotify`
