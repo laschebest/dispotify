@@ -1,75 +1,105 @@
+<div align="center">
 
-<div style="text-align:center">
-<img src="https://readme-typing-svg.demolab.com/?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=A7A459&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Dispotify%201.0.3" width="100%" />
+# dispotify
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=1ED760&center=true&vCenter=true&width=700&lines=Get+Spotify+activity+from+Discord+users;Fetch+Discord+user+information;Simple+Discord.js+utility+module;Built+for+bot+developers" />
+
+<br />
+
+![Node.js](https://img.shields.io/badge/Node.js-111111?style=for-the-badge&logo=node.js&logoColor=339933)
+![Discord.js](https://img.shields.io/badge/Discord.js-202225?style=for-the-badge&logo=discord&logoColor=5865F2)
+![Spotify](https://img.shields.io/badge/Spotify-121212?style=for-the-badge&logo=spotify&logoColor=1ED760)
+
+<br />
+
+<img src="https://visitor-badge.laobi.icu/badge?page_id=laschebest.dispotify&left_text=visitors" />
+<img src="https://img.shields.io/github/stars/laschebest/dispotify?style=flat-square&color=1ED760" />
+<img src="https://img.shields.io/github/last-commit/laschebest/dispotify?style=flat-square&color=f59e0b" />
+
 </div>
 
-### ✨ Features:
+---
 
-- Get user's current Spotify listening activity.
-- Get user info from Discord (display name, servers, avatar).
+## ✦ About
 
-### 🖋️ Usage:
-- Install module using `npm i dispotify`
+**dispotify**, Discord bot geliştiricileri için hazırlanmış küçük bir yardımcı kütüphanedir.
+
+Bir kullanıcının:
+
+- Discord bilgilerini
+- Spotify dinleme aktivitesini
+
+kolayca çekebilmeni sağlar.
+
+---
+
+## ✦ Features
+
+- kullanıcının **Spotify dinlediği şarkıyı alma**
+- **Discord kullanıcı bilgilerini alma**
+- guild bilgilerini çekme
+- avatar ve display name verisi
+- bot geliştiricileri için kolay kullanım
+
+---
+
+## ✦ Installation
+
+```bash
+npm install dispotify
+````
+
+---
+
+## ✦ Usage
 
 ```js
 const discord = require('discord.js');
 const Dispotify = require('dispotify');
 
 const client = new discord.Client({
-    intents: Object.keys(discord.GatewayIntentBits),
-    partials: Object.keys(discord.Partials)
+  intents: Object.keys(discord.GatewayIntentBits),
+  partials: Object.keys(discord.Partials)
 });
 
 const dispotify = new Dispotify(client);
 
 client.on("ready", async () => {
-    const spotify = await dispotify.getUserSpotifyListening("123456789012345678");
-    const userInfo = await dispotify.getUserInfo("123456789012345678");
-    // 123456789012345678 is the user ID
-    console.log(spotify, userInfo);
+
+  const spotify = await dispotify.getUserSpotifyListening("USER_ID");
+  const userInfo = await dispotify.getUserInfo("USER_ID");
+
+  console.log(spotify, userInfo);
+
 });
 
 client.login("YOUR_DISCORD_BOT_TOKEN");
 ```
 
-### 🛝 Examples:
+---
 
-- Data Examples:
+## ✦ Example Data
 
-### 🌎 Discord Data
-
-```js 
-{
-  displayName: 'Lâsche',
-  username: 'laschebest',
-  id: '706521629181739018',
-  avatar: 'https://cdn.discordapp.com/avatars/706521629181739018/55897ebe283b5c03a323fe5814724c33.webp?size=1024',
-  createdAt: '2020-05-03T15:04:42.934Z',
-  guilds: [
-    {
-      id: '1276930371509948437',
-      name: 'Lunatix Development',
-      guildInvite: 'https://discord.gg/lunatix', // Now works with vanity URL.
-      userGuildName: 'Lâsche',
-      userGuildAvatar: 'https://cdn.discordapp.com/avatars/706521629181739018/55897ebe283b5c03a323fe5814724c33.webp?size=1024'
-    }
-  ]
-}
-```
-
-### 🎶 Spotify Data
+### Discord Data
 
 ```js
 {
-  song: 'Pofuduk',
-  artist: 'Ezhel; Jugglerz',
-  album: 'Pofuduk',
-  albumUrl: 'https://i.scdn.co/image/ab67616d0000b273187cd86c8c5765ecec16e02f',
-  timeRemaining: 121772, //ms
-  timeElapsed: 21083 //ms
+ displayName: 'Lâsche',
+ username: 'laschebest',
+ id: '706521629181739018',
+ avatar: 'https://cdn.discordapp.com/...'
 }
 ```
 
----
+### Spotify Data
 
-### Do not forget joining Lunatix Development. https://discord.gg/lunatix
+```js
+{
+ song: 'Pofuduk',
+ artist: 'Ezhel; Jugglerz',
+ album: 'Pofuduk',
+ albumUrl: 'https://i.scdn.co/image/...',
+ timeRemaining: 121772,
+ timeElapsed: 21083
+}
+```
